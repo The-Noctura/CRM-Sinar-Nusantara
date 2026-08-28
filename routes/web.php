@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GudangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('role:administrator,operator')->group(function () {
   Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+});
+
+Route::middleware('role:administrator')->group(function () {
+  Route::get('/gudang', [GudangController::class, 'index'])->name('gudang.index');
 });
 
 require __DIR__ . '/auth.php';
