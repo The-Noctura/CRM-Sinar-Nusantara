@@ -4,7 +4,7 @@ Aplikasi web manajemen gudang dan transaksi berbasis Laravel untuk mendukung pro
 
 ## Fitur Utama
 
-- Autentikasi pengguna dan login
+- Autentikasi pengguna dan login menggunakan Laravel Breeze
 - Sistem role-based access untuk administrator dan operator
 - Manajemen data gudang
 - Manajemen kategori, satuan, produk, dan pelanggan
@@ -17,6 +17,7 @@ Aplikasi web manajemen gudang dan transaksi berbasis Laravel untuk mendukung pro
 
 - PHP 8.3+
 - Laravel 13
+- Laravel Breeze untuk autentikasi dan scaffolding UI
 - MySQL / database yang didukung Laravel
 - Blade templating
 - Tailwind CSS
