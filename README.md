@@ -1,58 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Bismillah Kabayan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi web manajemen gudang dan transaksi berbasis Laravel untuk mendukung proses operasional inventori seperti pengelolaan gudang, produk, stok, pelanggan, serta transaksi penjualan dan pemindahan barang antar gudang.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Autentikasi pengguna dan login
+- Sistem role-based access untuk administrator dan operator
+- Manajemen data gudang
+- Manajemen kategori, satuan, produk, dan pelanggan
+- Kelola stok gudang
+- Transaksi penjualan dan item transaksi
+- Barang masuk dan transfer gudang
+- Dashboard utama untuk operasional gudang
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.3+
+- Laravel 13
+- MySQL / database yang didukung Laravel
+- Blade templating
+- Tailwind CSS
+- Vite
+- Pest untuk testing
 
-## Learning Laravel
+## Struktur Project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- app/ : logika aplikasi, controller, model, middleware
+- config/ : konfigurasi Laravel
+- database/migrations/ : skema database
+- database/seeders/ : data awal seeder
+- resources/views/ : tampilan Blade
+- routes/ : definisi route aplikasi
+- tests/ : pengujian fitur
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Persyaratan Sistem
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Pastikan perangkat Anda sudah memiliki:
 
-## Agentic Development
+- PHP 8.3 atau versi lebih baru
+- Composer
+- Node.js dan npm
+- Database seperti MySQL/PostgreSQL/SQLite
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Instalasi
+
+1. Clone repository:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone <url-repository>
+cd bismillahkabayan
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+2. Install dependency PHP:
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Buat file environment:
 
-## Code of Conduct
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Generate application key:
 
-## Security Vulnerabilities
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. Konfigurasikan database di file `.env` sesuai environment Anda.
 
-## License
+6. Jalankan migrasi dan seeder:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan migrate --seed
+```
+
+7. Install dependency frontend:
+
+```bash
+npm install
+```
+
+8. Build assets frontend:
+
+```bash
+npm run build
+```
+
+9. Jalankan aplikasi:
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi di browser pada URL yang ditampilkan oleh artisan, biasanya:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Login Default
+
+Setelah seeder dijalankan, Anda dapat login dengan akun yang tersedia dari data user/role yang sudah dibuat. Jika belum ada akun khusus, gunakan route login pada aplikasi dan buat akun sesuai kebutuhan melalui proses autentikasi yang tersedia.
+
+## Route Utama
+
+- `/` : halaman login
+- `/dashboard` : dashboard utama
+- `/gudang` : daftar gudang
+- `/transaksi` : halaman transaksi
+
+## Testing
+
+Untuk menjalankan test aplikasi:
+
+```bash
+php artisan test
+```
+
+## Script yang Tersedia
+
+```bash
+composer run dev
+npm run dev
+npm run build
+php artisan test
+```
+
+## Lisensi
+
+Proyek ini dibuat untuk kebutuhan tugas/ project internal dan dapat dikembangkan lebih lanjut sesuai kebutuhan bisnis.
