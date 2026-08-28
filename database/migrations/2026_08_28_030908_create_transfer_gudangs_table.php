@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('master_barang', function (Blueprint $table) {
+        Schema::create('transfer_gudangs', function (Blueprint $table) {
             $table->id();
-            $
+            $table->foreignId('gudang_id')->constrained()->restrictOnDelete();
+            $table->foreignId('product_id')->constrained()->restrictOnDelete();
+            $table->integer('qty');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('master_barang');
+        Schema::dropIfExists('transfer_gudangs');
     }
 };
